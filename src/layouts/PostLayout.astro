@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GenericPageHero from '../components/heros/GenericPageHero.astro';
+import GenericLargeCard from '../components/cards/GenericLargeCard.astro';
+const { frontmatter } = Astro.props;
+---
+<Layout>
+    <GenericPageHero
+    header={frontmatter.title}
+    text={frontmatter.author}
+    />
+    <div class="blurb">
+        <GenericLargeCard
+        text={frontmatter.description}
+        />
+    </div>
+    <div class="content">
+        <slot />
+    </div>
+</Layout>
+
+<style is:global>
+    .content {
+        width: 50%;
+        margin: auto;
+    }
+    .blurb {
+        width: 50%;
+        margin: 3rem auto;
+    }
+
+    pre {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+</style>

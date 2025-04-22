@@ -1,0 +1,28 @@
+---
+import LargeBlogPostCard from "../../components/cards/LargeBlogPostCard.astro";
+import GenericPageHero from "../../components/heros/GenericPageHero.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+  return [
+    { params: { tag: "python" }, props: {posts: allPosts} },
+    { params: { tag: "webdev" }, props: {posts: allPosts} },
+    { params: { tag: "javascript" }, props: {posts: allPosts} },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag)).reverse();
+---
+<Layout pageTitle={tag}>
+  <GenericPageHero
+  header={tag}
+  />
+<div>
+    {filteredPosts.map((post: any) => <LargeBlogPostCard post={post} />)}
+</div>
+</Layout>

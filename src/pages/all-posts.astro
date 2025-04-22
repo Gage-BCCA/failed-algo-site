@@ -1,0 +1,17 @@
+---
+import LargeBlogPostCard from "../components/cards/LargeBlogPostCard.astro";
+import Postcard from "../components/cards/LargeBlogPostCard.astro";
+import GenericPageHero from "../components/heros/GenericPageHero.astro";
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+<Layout pageTitle="All Posts">
+    <GenericPageHero
+    header="All Posts"
+    text="I can ramble on and on."
+    />
+<div>
+    {allPosts.map((post: any) => <LargeBlogPostCard post={post} />).reverse()}
+</div>
+</Layout>

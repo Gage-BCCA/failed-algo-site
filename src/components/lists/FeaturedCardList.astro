@@ -1,0 +1,31 @@
+---
+// Component Imports
+import FeaturedCard from "../cards/FeaturedCard.astro";
+
+// Type Imports
+import type { Project } from "../../types/Project";
+
+interface Props {
+    projects: Array<Project>;
+}
+
+const { projects } = Astro.props;
+---
+<style>
+    div {
+        margin: 0;
+        display: flex;
+    }
+</style>
+<div>
+    { 
+        projects.map(
+            (project: any) => 
+                <FeaturedCard 
+                title={project.title}
+                links={project.links}
+                description={project.description}
+                />  
+        )
+    }
+</div>

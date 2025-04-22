@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Airlift",
+        "links": [
+            {
+                "url": "https: //github.com/Gage-BCCA/SharpDataStructures",
+                "description": "Github"
+            }
+        ],
+        "description": "Airlift is an open-source, Pythonic API wrapper for Airlock, a zero-trust security tool.",
+        "primaryLanguage": "Python",
+        "openSource": true
+    },
+    {
+        "title": "NukeOneStart",
+        "links": [
+            {
+                "url": "https: //github.com/Gage-BCCA/SharpDataStructures",
+                "description": "Github"
+            }
+        ],
+        "description": "Shady company deploys shady browser. Bypasses UAC by dropping program files into user folder. Pisses me off. Write program to nuke it.",
+        "primaryLanguage": "Python",
+        "openSource": true
+    },
+    {
+        "title": "Data Structures in C#",
+        "links": [
+            {
+                "url": "https: //github.com/Gage-BCCA/SharpDataStructures",
+                "description": "Github"
+            }
+        ],
+        "description": "This is me larping a computer programmer by recreating data structures and algorithms in C#.",
+        "primaryLanguage": "Python",
+        "openSource": true
+    }
+]

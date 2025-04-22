@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Astronomics",
+        "links": [
+            {
+                "url": "https://github.com/Gage-BCCA/Astronomics",
+                "description": "Github"
+            }
+        ],
+        "description": "An API-based game, where players establish colonies, build out their settlements, and try to strike it big. Written in Java with Spring. Undergoing a re-write to .NET Core.",
+        "primaryLanguage": "Java",
+        "openSource": true
+    },
+    {
+        "title": "Nanocart",
+        "links": [
+            {
+                "url": "https://github.com/Gage-BCCA/NanoCart",
+                "description": "Github"
+            }
+        ],
+        "description": "A shopping cart microservice that solely focuses on the cart. Give it a product and user ID, and it'll keep track. Just don't ask it what the product actually is.",
+        "primaryLanguage": "C#",
+        "openSource": true
+    },
+    {
+        "title": "Project Pinewood",
+        "links": [
+            {
+                "url": "https://github.com/Gage-BCCA",
+                "description": "Nothing to see here"
+            }
+        ],
+        "description": "A mobile-first website powered by Django, for a entrepreneur and TikTok influencer local to my area.",
+        "primaryLanguage": "Python",
+        "openSource": false
+    },
+    {
+        "title": "Data Pipeline from Security Tools",
+        "links": [
+            {
+                "url": "https://github.com/Gage-BCCA",
+                "description": "Nothing to see here"
+            }
+        ],
+        "description": "This one is for my day job, so I can't talk about it too much. It pulls ~100k records per day from various security tools and stores them in a database. It's awesome, you'll have to trust me.",
+        "primaryLanguage": "Python",
+        "openSource": false
+    }
+]

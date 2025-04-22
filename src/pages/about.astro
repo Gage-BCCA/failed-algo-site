@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GenericPageHero from "../components/heros/GenericPageHero.astro";
+import BigHeader from "../components/headers/BigHeader.astro";
+import { Code } from "astro:components";
+import GenericLargeCard from "../components/cards/GenericLargeCard.astro";
+import EmphasizedText from "../components/random/EmphasizedText.astro";
+---
+
+<Layout pageTitle="All Posts">
+    <div>
+        <GenericPageHero
+            header="About this Site"
+            text="I think it's pretty cool."
+        />
+    </div>
+    <section>
+        <BigHeader text="Built with Astro" />
+        <GenericLargeCard
+            text="Astro is a component-based static site generator. It's like React for the cool kids."
+        />
+
+        <div class="astro">
+            <div class="astro__code">
+                <Code
+                    code={`
+---
+import LinkButton from "../buttons/LinkButton.astro";
+const { post } = Astro.props;
+---
+
+<style>
+    .postcard {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1rem 3rem;
+        border-radius: 6px;
+        width: 65%;
+        margin: 2rem auto;
+        border: 3px solid #34495e;
+        box-shadow: 15px 8px #e74c3c;
+    }
+
+    .tags {
+        margin-top: 1rem;
+    }
+
+    .tags > a {
+        background-color: #c0392b;
+        color: white;
+        text-decoration: none;
+        margin: 0 1rem 0 0;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+    }
+</style>
+<div class="postcard">
+    <div class="tags">
+        {
+            post.frontmatter.tags.map((tag: string) => (
+                <a href=${"{`/tags//`}>#{tag}"}</a>
+            ))
+        }
+    </div>
+    <h1>{post.frontmatter.title}</h1>
+    <p>{post.frontmatter.description}</p>
+    <LinkButton url={post.url} buttonText="See More" />
+</div>
+        `}
+                    lang="js"
+                />
+            </div>
+            <div class="astro__text">
+                <h2>
+                    Here's an component that you see all throughout the site.
+                </h2>
+                <p>
+                    Every component has been made generic, so I can just store
+                    data in JSON files or frontmatter. It also makes it super easy to build new
+                    pages or add new data points.
+                </p>
+                <a href="#">Source</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <BigHeader text="Made with Maintenance in Mind" />
+        <p>
+            My last site became this ugly amalgamation of HTML and Markdown. So I made this site with a simple rule:
+        </p>
+        <EmphasizedText text="Data goes in JSON. Posts go in Markdown. Static content goes in components." />
+        <p>This setup was rough to start, but has made it very easy to add/remove projects and keep this up-to-date.</p>
+    </section>
+    <section>
+        <BigHeader text="A Place To Write" />
+        <GenericLargeCard text="I'm going through my programming journey and I needed a place to write. So I made this." />
+        <p>With Astro, it's super easy to just focus on pumping out blog posts. Combined with my focus on making generic components, this site will be super easy to maintain and grow.</p>
+    </section>
+    <section>
+        <BigHeader text="The Todo List" />
+        <p>This is kind of a "hidden" page. Congrats on finding it. Most people never click here.</p>
+        <a href="/roadmap">Roadmap</a>
+    </section>
+</Layout>
+
+<style>
+    .astro {
+        display: flex;
+        padding: 1rem;
+    }
+    .astro__code {
+        flex: 0 0 45%;
+        overflow-y: scroll;      
+    }
+    .astro__code > pre {
+        border-radius: 12px;
+        max-height: 300px;
+        text-align: left;
+        padding: 1rem; 
+    }
+    .astro__text {
+        flex: 0 0 45%;
+        padding: 2rem;
+        text-align: center;
+        margin: auto;
+    }
+    section {
+        width: 75%;
+        margin: 4rem auto;
+    }
+</style>

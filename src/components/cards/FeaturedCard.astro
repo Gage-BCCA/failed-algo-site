@@ -1,0 +1,19 @@
+---
+const { title, links, description } = Astro.props
+---
+<style>
+    .project {
+        flex: 1;
+        background-color: #2c3e50;
+        box-shadow: 15px 8px #c0392b;
+        color: #eee;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 6px;
+    }
+</style>
+<div class="project">
+    <h1>{title}</h1>
+    {links.map((link: any) => <a href="{links.url}">{link.description}</a>)}
+    <p>{description}</p>
+</div>

@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BigHeader from "../components/headers/BigHeader.astro";
+import FeaturedCardList from "../components/lists/FeaturedCardList.astro";
+import AlternatingList from "../components/lists/AlternatingList.astro";
+import GenericLargeCard from "../components/cards/GenericLargeCard.astro";
+import SimpleCardList from "../components/lists/SimpleCardList.astro";
+import GenericPageHero from "../components/heros/GenericPageHero.astro";
+
+import { Image } from "astro:assets";
+import Gage from "../images/gage.jpeg";
+
+// Data imports
+import featuredProjects from "../data/featuredProjects.json";
+import interests from "../data/interests.json";
+import additionalProjects from "../data/additionalProjects.json"
+import LinkButton from "../components/buttons/LinkButton.astro";
+---
+
+<style>
+    img {
+        max-height: 300px;
+        max-width: 225px;
+        border-radius: 12px;
+        box-shadow: 10px 10px 15px #34495e;
+    }
+
+    section {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+    .welcome {
+        text-align: center;
+        margin: 3rem auto;
+    }
+
+    .welcome > p {
+        width: 50%;
+        margin: auto;
+    }
+
+    .featured-projects {
+        text-align: center;
+        margin: 6rem auto;
+    }
+
+    .interests {
+        text-align: center;
+    }
+</style>
+<Layout pageTitle="Portfolio">
+    <div class="welcome">
+        <Image src={Gage} alt="A silly selife with my son." />
+        <GenericPageHero
+            header="Hi! I'm Gage."
+            text={`I'm an IT security analyst that is going through his journey to join the
+          software development world. I love working on systems, making them go
+          fast, and saying the word "efficacy".`}
+        />
+        <div>
+            <button>Python</button>
+        </div>
+    </div>
+    <section class="featured-projects">
+        <BigHeader text="Featured Projects" />
+        <FeaturedCardList projects={featuredProjects} />
+    </section>
+    <section class="interests">
+        <BigHeader text="My Interests" />
+        <AlternatingList items={interests} />
+    </section>
+    <section>
+        <BigHeader text="Community" />
+        <GenericLargeCard
+            header="FalconPy"
+            text={`
+        I've contributed to CrowdStrike's falconpy repo. It was my first PR, and it holds a special
+        place in my heart.`}
+        />
+        <GenericLargeCard
+            header="Airlift"
+            text={`
+        I'm developing an open-source, Pythonic API wrapper for Airlock. Largely inspired by falconpy.
+        `}
+        />
+    </section>
+    <section>
+        <BigHeader text="Additional Projects" />
+        <SimpleCardList projects={additionalProjects} />
+    </section>
+    <section>
+        <BigHeader text="Let's Get In Touch" />
+        <div>
+            <LinkButton url="#" buttonText="Github" />
+            <LinkButton url="#" buttonText="Github" />
+            <LinkButton url="#" buttonText="Github" />
+            <LinkButton url="#" buttonText="Github" />
+        </div>
+    </section>
+</Layout>

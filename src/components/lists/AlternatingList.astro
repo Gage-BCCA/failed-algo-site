@@ -1,0 +1,44 @@
+---
+interface Props {
+    items: Item[]
+}
+
+interface Item {
+    header: string;
+    text: string;
+}
+
+const { items } = Astro.props
+---
+<style>
+    .list__item {
+        padding: 1rem;
+        background-color: #ecf0f1;
+        border: 2px solid #34495e;
+        box-shadow: 0px 10px #34495e;
+        border-radius: 16px;
+        border-top-left-radius: 0;
+        margin: 2rem 10%;
+        width: 45%;
+    }
+
+    .list__item:nth-child(even) {
+        margin: 2rem 0 2rem 35%;
+        border-radius: 16px;
+        border-top-right-radius: 0;
+        border: 2px solid #e74c3c;
+        box-shadow: 0px 10px #e74c3c;
+    }
+</style>
+<div class="list">
+    {
+
+    items.map((item) => 
+        <div class="list__item">
+            <h2>{item.header}</h2>
+            <p>{item.text}</p>
+        </div>
+    )
+    
+    }
+</div>
