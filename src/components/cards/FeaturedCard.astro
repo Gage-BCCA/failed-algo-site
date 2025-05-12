@@ -1,6 +1,10 @@
 ---
-const { title, links, description } = Astro.props
+import type { Link } from "../../types/Link";
+import LinkButton from "../buttons/LinkButton.astro";
+
+const { project } = Astro.props;
 ---
+
 <style>
     .project {
         flex: 1;
@@ -8,12 +12,64 @@ const { title, links, description } = Astro.props
         box-shadow: 15px 8px #c0392b;
         color: #eee;
         margin: 1rem;
-        padding: 1rem;
+        padding: 0;
         border-radius: 6px;
     }
+
+    .project__language-wrapper {
+        background-color: #34495e;
+        border-radius: 6px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: .5rem;
+    }
+
+    .project__language-wrapper > h1 {
+        font-size: 2.3rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 1rem 0 .5rem 0;
+        border-radius: 8px;
+        margin: .5rem auto 0 auto;
+    }
+
+    .project__language {
+        min-width: 10%;
+        max-width: fit-content;
+        text-align: center;
+        margin: 0 auto;
+        background-color: #fa983a;
+        padding: 0 .5rem;
+        border-radius: 4px;
+    }
+
+    .project__language > p {
+        margin: 0;
+        color: #0c2461;
+    }
+    
+
+
+    .project > p {
+        align-content: center;
+        padding: 2rem;
+        height: 100px;
+    }
+
 </style>
 <div class="project">
-    <h1>{title}</h1>
-    {links.map((link: any) => <a href="{links.url}">{link.description}</a>)}
-    <p>{description}</p>
+    <div class="project__language-wrapper">
+        <h1>{project.title}</h1>
+        <div class="project__language">
+            <p>{project.primaryLanguage}</p>
+        </div>
+    </div>
+    <p>{project.description}</p>
+    
+    {
+        project.links.map((link: Link) => (
+            <LinkButton url={link.url} buttonText={link.description} />
+        ))
+    }
+    
 </div>

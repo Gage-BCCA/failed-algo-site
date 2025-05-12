@@ -22,9 +22,7 @@ const { projects } = Astro.props;
         projects.map(
             (project: any) => 
                 <FeaturedCard 
-                title={project.title}
-                links={project.links}
-                description={project.description}
+                project={project}
                 />  
         )
     }

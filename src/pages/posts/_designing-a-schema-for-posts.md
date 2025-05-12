@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Designing a Schema for Posts"
-pubDate: 2025-04-02
+pubDate: 2025-04-17
 description: "Markdown is cool for writing posts. What about storing and rendering them?"
 author: "Gage Schaffer"
 tags: ["webdev"]
@@ -11,8 +11,6 @@ I've toyed around with a few static site generators. One thing that I've noticed
 Markdown is cool, though, so I have no qualms about it. It's quick and easy to format text. One shortcoming, though, is what if I wanted
 to display a chunk of text in a special way? It would be really hard to do. In fact, I'm not sure it would be possible without some hacky
 solution.
-
-Also, 
 
 # The Motivation? Reinventing the Wheel
 I have been working on a client project recently, and one of the requirements was a simple post editor. She needed an easy, web-based way to put some words on a post. Good buttons? Green. Dangerous buttons? Red. 

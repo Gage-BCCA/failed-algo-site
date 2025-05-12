@@ -2,13 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 import GenericPageHero from "../components/heros/GenericPageHero.astro";
 ---
+<style>
+    .list-container {
+        width: 50%;
+        margin: auto;
+        padding: 1rem;
+    }
+</style>
 <Layout pageTitle="All Posts">
 <div>
     <GenericPageHero 
     header="Roadmap"
-    text={`Bottom text
+    text={`The Todo list
     `}
     />
 
+    <div class="list-container">
+        <ul>
+            <li>Fill out the Homepage</li>
+            <li>Add a few items to the Interesting Stuff page</li>
+            <li>Make the about page better</li>
+            <li>Style out the links towards the top of the portfolio</li>
+            <li>Create Social Media components</li>
+            <li>Finish one or two articles before publishing</li>
+            <li>Add a tool to the tools page</li>
+        </ul>
+    </div>
 </div>
 </Layout>

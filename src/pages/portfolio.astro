@@ -15,6 +15,7 @@ import featuredProjects from "../data/featuredProjects.json";
 import interests from "../data/interests.json";
 import additionalProjects from "../data/additionalProjects.json"
 import LinkButton from "../components/buttons/LinkButton.astro";
+import SocialMediaButton from "../components/buttons/SocialMediaButton.astro";
 ---
 
 <style>
@@ -57,9 +58,6 @@ import LinkButton from "../components/buttons/LinkButton.astro";
           software development world. I love working on systems, making them go
           fast, and saying the word "efficacy".`}
         />
-        <div>
-            <button>Python</button>
-        </div>
     </div>
     <section class="featured-projects">
         <BigHeader text="Featured Projects" />
@@ -91,10 +89,9 @@ import LinkButton from "../components/buttons/LinkButton.astro";
     <section>
         <BigHeader text="Let's Get In Touch" />
         <div>
-            <LinkButton url="#" buttonText="Github" />
-            <LinkButton url="#" buttonText="Github" />
-            <LinkButton url="#" buttonText="Github" />
-            <LinkButton url="#" buttonText="Github" />
+            <SocialMediaButton url="https://github.com/Gage-BCCA" buttonText="Github"/>
+            <SocialMediaButton url="https://bsky.app/profile/failedalgorithm.com" buttonText="Bluesky"/>
+            <SocialMediaButton url="https://www.linkedin.com/in/gage-schaffer-aa8624133/" buttonText="LinkedIn"/>
         </div>
     </section>
 </Layout>

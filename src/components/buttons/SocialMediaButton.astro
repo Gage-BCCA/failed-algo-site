@@ -1,0 +1,26 @@
+---
+const { url, buttonText } = Astro.props;
+---
+
+<style>
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        padding: 0.25rem 2rem;
+        background-color: #e74c3c;
+        transition-duration: 250ms;
+        border-radius: 0.5rem;
+        margin: 1rem 0.5rem;
+        min-width: 50px;
+        min-height: 50px;
+        align-content: center;
+        box-shadow: -5px -13px #34495e;
+    }
+
+    a:hover {
+        background-color: #c0392b;
+        border-radius: 20%;
+    }
+</style>
+<a href={url}> {buttonText} </a>

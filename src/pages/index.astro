@@ -34,12 +34,14 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 		  development world. In this personal blog, I'm writing about what I'm
 		  learning and working on.
 		</p>
-		<LinkButton url="/posts" buttonText="See All Posts" />
+		<LinkButton url="/all-posts" buttonText="See All Posts" />
 		<LinkButton url="/portfolio" buttonText="Portfolio" />
 		<LinkButton url="/about" buttonText="About this Site" />
 	</div>
 	<div class="frontpage__posts">
 		<BigHeader text="Recent Blog Posts" />
-		{allPosts.map((post: any) => <LargeBlogPostCard post={post} />).reverse()}
+		{allPosts.sort((a: any, b: any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
+		.map((post: any) => <LargeBlogPostCard post={post} />)
+		}
 	</div>
 </Layout>
