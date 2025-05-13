@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import GenericPageHero from '../components/heros/GenericPageHero.astro';
 import GenericLargeCard from '../components/cards/GenericLargeCard.astro';
+import SocialMediaButton from '../components/buttons/SocialMediaButton.astro';
 const { frontmatter } = Astro.props;
 ---
 <Layout>
@@ -14,23 +15,79 @@ const { frontmatter } = Astro.props;
         text={frontmatter.description}
         />
     </div>
-    <div class="content">
+    <div class="post">
         <slot />
+    </div>
+    <div class="about">
+        <h3>By</h3>
+        <h1>Gage Schaffer</h1>
+        <p>Likes to code. Hates hackers. </p>
+        <div>
+            <SocialMediaButton url="https://github.com/Gage-BCCA" buttonText="Github"/>
+            <SocialMediaButton url="https://bsky.app/profile/failedalgorithm.com" buttonText="Bluesky"/>
+            <SocialMediaButton url="https://www.linkedin.com/in/gage-schaffer-aa8624133/" buttonText="LinkedIn"/>
+        </div>
     </div>
 </Layout>
 
 <style is:global>
-    .content {
+    .about {
+        text-align: center;
+        margin: 5rem auto;
+        padding: 1rem;
+        width: 35%;
+        border: 1px solid red;
+        border-radius: 6px;
+    }
+
+    .about > h1, .about > h3 {
+        margin: 0;
+    }
+
+    .post {
         width: 50%;
         margin: auto;
+        padding: 1rem 1rem 1rem 3rem;
+        border-left: 1px solid #c0392b;
+
     }
     .blurb {
-        width: 50%;
+        width: 45%;
         margin: 3rem auto;
     }
 
     pre {
         padding: 1rem;
         border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+
+    .post > h1 {
+        margin-top: 4rem;
+        font-weight: 600;
+        background-color: #2c3e50;
+        padding: 1rem;
+        border-radius: 6px;
+        color: white;
+        text-align: center;
+        box-shadow: 0px -10px #c0392b;
+    }
+
+    .post > h2, .post > h3 {
+        margin-top: 3rem;
+        font-weight: 500;
+        border-bottom: 1px solid #c0392b;
+        width: 75%;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+
+    p > code {
+        background-color: #24292e;
+        padding: .1rem; 
+        border-radius: 6px;
+        color: white;
     }
 </style>

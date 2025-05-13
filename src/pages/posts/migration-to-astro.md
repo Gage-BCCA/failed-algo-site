@@ -49,7 +49,9 @@ This makes it super easy. On the old site, here's the highlighted skills section
 </div>
 ```
 
-Terrible. Here's a similar section on the new site:
+Terrible. 
+
+Here's a similar section on the new site:
 
 ```javascript
 
@@ -68,6 +70,10 @@ Much, much better.
 
 Obviously, I've hidden some code to exaggerate my point -- but I don't have to think about any
 of it and I've kind of hidden it from myself. If I want to add a skill, I add it to the JSON file and
-**boom**, skill displayed.
+**boom**, skill displayed. Or, if I want to make the skills look different, I just edit a single component.
 
+
+## That's All For Now
+That's about it for the new site so far. There are still some sections that I am building out, and I really plan on making
+this place my personal public playground, sans child-staring weirdos. 
 

@@ -6,14 +6,16 @@ import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
   return [
-    { params: { tag: "python" }, props: {posts: allPosts} },
-    { params: { tag: "webdev" }, props: {posts: allPosts} },
-    { params: { tag: "javascript" }, props: {posts: allPosts} },
+    { params: { tag: "python" }, props: {posts: allPosts, tagDescription: "The snake language"} },
+    { params: { tag: "webdev" }, props: {posts: allPosts, tagDescription: "General posts about web development" } },
+    { params: { tag: "javascript" }, props: {posts: allPosts, tagDescription: "For some reason, I hate it. But it's cool, I guess."} },
+    { params: { tag: "larping" }, props: {posts: allPosts, tagDescription: "Pretending to be a computer programmer." } },
   ];
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, tagDescription } = Astro.props;
+
 
 
 const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag)).reverse();
@@ -21,6 +23,7 @@ const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.include
 <Layout pageTitle={tag}>
   <GenericPageHero
   header={tag}
+  text={tagDescription}
   />
 <div>
     {filteredPosts.map((post: any) => <LargeBlogPostCard post={post} />)}
