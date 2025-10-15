@@ -12,7 +12,7 @@ const { project } = Astro.props;
         box-shadow: 15px 8px #c0392b;
         color: #eee;
         margin: 1rem;
-        padding: 0;
+        padding-bottom: 1rem;
         border-radius: 6px;
     }
 
@@ -48,12 +48,17 @@ const { project } = Astro.props;
         color: #0c2461;
     }
     
-
-
     .project > p {
         align-content: center;
         padding: 2rem;
         height: 100px;
+    }
+
+    @media screen and (max-width: 900px) {
+        .project > p {
+            height: auto;
+            padding: .5rem;
+        }
     }
 
 </style>

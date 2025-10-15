@@ -35,11 +35,6 @@ import SocialMediaButton from "../components/buttons/SocialMediaButton.astro";
         margin: 3rem auto;
     }
 
-    .welcome > p {
-        width: 50%;
-        margin: auto;
-    }
-
     .featured-projects {
         text-align: center;
         margin: 6rem auto;
@@ -47,6 +42,16 @@ import SocialMediaButton from "../components/buttons/SocialMediaButton.astro";
 
     .interests {
         text-align: center;
+    }
+
+    @media screen and (max-width: 900px) {
+        section {
+            margin: auto;
+            padding: 0;
+            max-width: 80%;
+        }
+
+
     }
 </style>
 <Layout pageTitle="Portfolio">

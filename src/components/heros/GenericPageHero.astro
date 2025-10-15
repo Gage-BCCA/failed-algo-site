@@ -8,13 +8,23 @@ const { header, text } = Astro.props;
 
 <style>
     div {
-        width: 65%;
-        margin: 5rem auto;
         text-align: center;
+        width: 60%;
+        margin: auto;
+    }
+    div h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+        
     }
 
-    div > h1 {
-        font-size: 3rem;
-        margin-bottom: 0;
+    @media screen and (max-width: 900px) {
+        div {
+            margin: 6rem auto auto auto;
+            width: 90%;
+        }
+        div h1 {
+            font-size: 3rem;
+        }
     }
 </style>
